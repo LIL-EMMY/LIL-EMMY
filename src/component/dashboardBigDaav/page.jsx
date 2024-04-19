@@ -55,6 +55,14 @@ const Dashboard = () => {
                                     <span className={styles.secondHIconCon}><GoArrowUpRight className={styles.secondHIcon}/></span>
                               </div>
 
+                              <span className={styles.savingTarget}> target: <span className={styles.priceTarget}> $2,000.00</span></span>
+
+                              <div className={styles.progressBar}>
+                                    <div className={styles.bar}></div>
+                              </div>
+
+                              
+
                         </div>
 
                   </div>
