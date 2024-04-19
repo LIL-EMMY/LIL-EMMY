@@ -1,0 +1,146 @@
+.dashboardContainer {
+      max-width: 100%;
+      height: auto;
+      
+}
+
+.dashboardContainer_card1 {
+      padding: .8rem 1.2rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-end;
+      
+}
+
+.card {
+      width: 26.5rem;
+      height: 13.5rem;
+      border-radius: .5rem;
+      box-shadow: 1px 2px 5px 2.5px rgba(234, 234, 234, 0.6);
+      padding: .8rem;
+}
+
+.section1Heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .3rem;
+      
+}
+
+.heading1, .heading2, .heading3, .heading4 {
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: .8rem;
+}
+
+.heading2Icon {
+      display: inline-block;
+      margin-right: .5rem;
+}
+
+.heading2 {
+      border: .1rem solid black;
+      font-weight: bold;
+      padding: .3rem;
+      border-radius: .35rem;
+      
+}
+
+.heading3 {
+      font-size: 2rem;
+      font-weight: 600;
+}
+
+.eye {
+      font-size: 1.5rem;
+}
+
+.section1Heading2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .8rem;
+}
+.iconCon {
+      display: inline-block;
+      padding: .65rem;
+      border-radius: 50%;
+      background-color: rgb(233, 233, 233);
+
+}
+.iconWriteUp {
+      display: block;
+      text-align: center;
+      font-size: .8rem;
+      margin-top: .4rem;
+      font-weight: bold;
+}
+
+.icon1 {
+      font-weight: bold;
+}
+
+
+.section1Heading3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .8rem;
+}
+
+.load {
+      font-size: 1.2rem;
+}
+
+.section1Heading4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+}
+
+
+/* card 3 goes here */
+
+.card3Heading {
+      font-size: .8rem;
+}
+
+.cardSec2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .7rem;
+}
+
+.firstH, .firstHPrice, .firstHPercentage, .secondHIconCon {
+      display: inline-block;
+}
+
+.firstH {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .7rem;
+}
+
+.firstHPrice {
+      font-weight: bold;
+      font-size: 1.7rem;
+}
+
+.firstHPercentage {
+      border-radius: 2rem;
+      background-color: lime;
+      color: gray;
+      font-size: .7rem;
+      padding: .2rem;
+}
+
+.secondHIconCon {
+      padding: .65rem;
+      border-radius: 50%;
+      background-color: rgb(233, 233, 233);
+}
