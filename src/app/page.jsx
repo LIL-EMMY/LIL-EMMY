@@ -1,8 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react'
+import Sidenav from './components/side-nav/page'
+import Navbar from './components/navbar/page'
 
-export default function Home() {
+export default function page() {
   return (
-    <h1>Home page</h1>
-  );
+    <div>
+      <Navbar/>
+      <Sidenav/>
+    </div>
+  )
 }

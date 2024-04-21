@@ -1,0 +1,47 @@
+.logo{
+    color: rgb(0, 220, 209);
+    font-size: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.handle{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+}
+
+
+.side{
+    background-color: rgb(3, 11, 18);
+    height:700px;
+    width: fit-content;
+    margin-top: -60px;
+}
+
+.sidebar{
+    display: flex;
+    line-height: 60px;
+    font-size: 20px;
+    padding-left: 20px;
+    background-color: rgb(3, 11, 18);
+    padding-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: sticky;
+    
+}
+ 
+
+
+.sidebar .name{
+    margin-left: 40px;  
+    transition: opacity 0.3s ease; 
+    display: flex;
+}
+
+.sidebar:hover {
+    color: aqua;
+}
+
+
+
