@@ -1,24 +1,20 @@
-<<<<<<< HEAD
-import React from 'react'
-import Sidenav from '../component/side-nav/page'
-import Navbar from '../component/navbar/page'
-=======
+import React from "react";
+import Sidenav from "../component/side-nav/page";
+import Navbar from "../component/navbar/page";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Dashboard from "@/component/dashboardBigDaav/page";
->>>>>>> 249c688f8b1a95ead029494c36d758d33c1eae83
+import ThemeToggle from "@/component/darkLightMode/ThemeToggle";
+import { ThemeProvider } from "@/component/darkLightMode/Context";
 
 export default function page() {
   return (
-<<<<<<< HEAD
-    <div>
-      <Navbar/>
-      <Sidenav/>
-    </div>
-  )
-=======
-    <Dashboard/>
-    
+    <>
+      <Navbar />
+      <Sidenav />
+      <ThemeToggle />
+      <Dashboard />
+      <ThemeProvider />
+    </>
   );
->>>>>>> 249c688f8b1a95ead029494c36d758d33c1eae83
 }

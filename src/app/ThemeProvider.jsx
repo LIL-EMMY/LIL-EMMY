@@ -1,7 +1,7 @@
 
 // import { ThemeProvider } from '../utils/ThemeContext';
 
-import { ThemeProvider } from "@/component/darkLightMode/page";
+import { ThemeProvider } from "@/component/darkLightMode/ThemeToggle";
 
 function MyApp({ Component, pageProps }) {
   return (
