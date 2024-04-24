@@ -67,6 +67,7 @@ export default function Sidenav() {
 
 
 
+
             <div className={styles.sidebar}>
                <div className={styles.icon}><MdHeadsetMic /></div>
                {showNames && <div className={styles.name}>customer care</div>}

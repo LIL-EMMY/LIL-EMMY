@@ -1,3 +1,21 @@
-.container{
+
+.toggle{
     display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    border-radius: 3px;
+    position: relative;
+
+}
+
+.ball{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    right:2px;
+
 }

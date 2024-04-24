@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import { CgMoon, CgSun } from "react-icons/cg";
-import styles from "./page.module.css";
+import "./page.module.css";
 import { ThemeContext } from "./Context";
 
 export default function ThemeToggle() {
@@ -10,7 +10,7 @@ export default function ThemeToggle() {
 
   return (
     <div>
-      <div className="toggle hii">
+      <div className="toggle">
         <CgSun />
         <div
           className="ball"
