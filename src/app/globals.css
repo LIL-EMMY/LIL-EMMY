@@ -74,6 +74,17 @@
 }
 
 * {
+<<<<<<< HEAD
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: sans-serif;
+            /* border: solid 1px red; */
+        
+}
+=======
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -105,3 +116,4 @@ a {
     color-scheme: dark;
   }
 }
+>>>>>>> ce0c660f0a19d17c990579c5c35f1b6591f5778b
