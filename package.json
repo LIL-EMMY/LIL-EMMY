@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "chart.js": "^4.4.2",
-    "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
+<<<<<<< HEAD
     "react-icon": "^1.0.0",
     "react-icons": "^5.1.0"
+=======
+    "next": "14.2.2"
+>>>>>>> ce0c660f0a19d17c990579c5c35f1b6591f5778b
   },
   "devDependencies": {
     "eslint": "^8",

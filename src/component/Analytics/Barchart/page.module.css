@@ -1,0 +1,24 @@
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.body h1{
+    font-size: 1.4rem;
+}
+.body >div{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.548);
+}
+.income{
+    background-color: red;
+    width: 100px;
+}
