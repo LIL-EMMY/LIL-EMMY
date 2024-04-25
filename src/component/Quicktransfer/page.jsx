@@ -18,7 +18,7 @@ export default function Quicktransfer() {
               <h1>Cards</h1>
               <div className={styles.visacards}>
                 <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRujGaOrEq35cE8H1cwo2dHKq8hEuUlqr3qXQ&s"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjz_ZDEuJSIvzdEF_IK4A2dHYLaJLYLgCvvD80zCg5LzajNMrcm0ZLB7Vx4AanLt75x64&usqp=CAU"
                   width={420}
                   height={235}
                 />
