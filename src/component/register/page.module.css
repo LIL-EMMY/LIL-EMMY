@@ -1,0 +1,152 @@
+.container{
+    box-sizing: border-box;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    justify-content: center;
+
+    
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 90%;
+    margin-left: 5%;
+    padding: 2rem;
+}
+
+.side{
+    background: url("https://images.unsplash.com/photo-1525011268546-bf3f9b007f6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXJyb3d8ZW58MHx8MHx8fDA%3D") no-repeat center, rgb(3, 17, 34); 
+    background-size: cover;
+    width: 40%;
+    height: 70vh;
+    background-blend-mode: overlay;
+    position: relative;
+    margin-top: 3.2rem;
+    margin-right: 2rem;
+   padding-top: 10rem;
+   padding-bottom: 4rem;
+   padding-left: 5rem;
+   padding-right: 2rem;
+    
+    
+   
+}
+
+.form{
+   background-color: white;
+   color:   rgb(55,173,243);
+    width: 50%;
+    height: 90vh;
+    padding: 2rem;
+    border-left: solid 2px rgb(210,210,216);
+    font-family: cursive;
+
+   
+}
+.form h2{
+    font-family: cursive;
+}
+
+.formControl{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px rgb(210,210,216) ;
+   
+}
+
+.label{
+    font-family: cursive;
+    font-size: 14px;
+    font-style: italic;
+    display: inline-block;
+    color: rgb(210,210,216);
+    
+}
+.formGroup input {
+    color: rgb(55,173,243);
+    font-family: cursive;
+    font-size: 14px;
+    font-style: bold;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+}
+.formGroup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btn{
+    display: flex; 
+    background-color: white;
+    color:  rgb(55,173,243);;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    border-radius:5px ;
+    font-family: cursive;
+    font-style: italic;
+    margin-top: 15px;
+    margin-left: 65%;
+}
+.icon{
+    font-size: 25px;
+    font-weight: bold;
+}
+.btn:hover .icon{
+    margin-left: .4rem;
+}
+.ptext {
+    font-size: 14px;
+    color: inherit;
+    text-align: center;
+    font-family: cursive;
+}
+.err{
+    font-family: sans-serif;
+    color: red;
+    font-size: 12px;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+.etext{
+    font-size: 3.5rem;
+    font-family: sans-serif;
+    line-height: 4rem;
+}
+
+.text h1{
+    color:rgb(210,210,216);
+   font-size: 2.5rem;
+   font-family: sans-serif;
+}
+.motor{
+    font-size: 12px;
+    font-family: cursive;
+    font-style: italic;
+    color: rgb(55,173,243);
+    margin-left: 55%;
+    margin-top: -9px;
+}
+.side h1{
+    color:rgb(210,210,216);
+   font-size: 2.5rem;
+   font-family: sans-serif;
+}
+.side a{
+    font-family: sans-serif;
+    color: rgb(55,173,243);
+}
+.link{
+    display: block;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    color: rgb(210,210,216);
+    padding-top: 0.5rem;
+}
