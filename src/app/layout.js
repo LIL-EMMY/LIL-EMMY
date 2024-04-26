@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 // import "./globals.css";
 import { useContext } from "react";
-import { ThemeProvider } from "@/component/darkLightMode/Context";
+import { ThemeProvider } from "@/component/ThemeMode/Context";
 import Navbar from "@/component/navbar/page";
 import Sidenav from "@/component/side-nav/page";
 
