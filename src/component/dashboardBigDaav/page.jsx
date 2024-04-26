@@ -1,3 +1,4 @@
+"use client"
 import styles from "@/component/dashboardBigDaav/page.module.css";
 import { TbEye } from "react-icons/tb";
 import { BsSend } from "react-icons/bs";
@@ -6,6 +7,20 @@ import { FaMoneyBill } from "react-icons/fa";
 import { MdOutlinePayment } from "react-icons/md";
 import { TfiReload } from "react-icons/tfi";
 import { GoArrowUpRight } from "react-icons/go";
+import Chart from 'chart.js/auto';
+
+import React, {useEffect} from "react"
+
+const BarChart = () => {
+ 
+      return (
+            <div><canvas className={styles.acquisitions}></canvas></div>
+      )
+}
+
+
+
+
 const Dashboard = () => {
       return(
             <section className={styles.dashboardContainer}>
@@ -46,7 +61,7 @@ const Dashboard = () => {
 
                         {/* card 3 */}
                         <div className={`${styles.card1Section3} ${styles.card}`}>
-                              <span className={styles.card3Heading}>income</span>
+                              <span className={styles.card3Heading}>Income</span>
                               <div className={styles.cardSec2}>
                                     <span className={styles.firstH}>
                                           <span className={styles.firstHPrice}>$1,800.00</span>
@@ -60,12 +75,55 @@ const Dashboard = () => {
                               <div className={styles.progressBar}>
                                     <div className={styles.bar}></div>
                               </div>
-
-                              
-
                         </div>
 
                   </div>
+
+                  <div className={styles.container2}>
+                        <div className={styles.chart}>
+                                    <h1>Chart Pending...</h1>
+                        </div>     
+
+                        <div className={styles.SecondSegment}>
+                        {/*SEGMENT 2 CARD 1 */}
+                        <div className={`${styles.card1Section3} ${styles.card}`}>
+                                    <span className={styles.card3Heading}>Expenses</span>
+                                    <div className={styles.cardSec2}>
+                                          <span className={styles.firstH}>
+                                                <span className={styles.firstHPrice}>$1,200.00</span>
+                                                <span className={styles.firstHPercentage2}>80.00%</span>
+                                          </span>
+                                          <span className={styles.secondHIconCon}><GoArrowUpRight className={styles.secondHIcon}/></span>
+                                    </div>
+
+                                    <span className={styles.savingTarget}> Max: <span className={styles.priceTarget}> $1,500.00</span></span>
+
+                                    <div className={styles.progressBar}>
+                                          <div className={styles.bar2}></div>
+                                    </div>
+                              </div>
+
+                              {/* SEGMENT 2 CARD 2 */}
+
+                              <div className={`${styles.card1Section3} ${styles.card}`}>
+                                    <span className={styles.card3Heading}>Savings</span>
+                                    <div className={styles.cardSec2}>
+                                          <span className={styles.firstH}>
+                                                <span className={styles.firstHPrice}>$1,280.00</span>
+                                                <span className={styles.firstHPercentage3}>12.80%</span>
+                                          </span>
+                                          <span className={styles.secondHIconCon}><GoArrowUpRight className={styles.secondHIcon}/></span>
+                                    </div>
+
+                                    <span className={styles.savingTarget}> Goal: <span className={styles.priceTarget}> $10,000.00</span></span>
+
+                                    <div className={styles.progressBar}>
+                                          <div className={styles.bar3}></div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+
             
             
             </section>

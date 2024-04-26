@@ -1,0 +1,141 @@
+.container{
+    background: url("https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center, rgb(3, 17, 34); 
+    background-size: cover;
+    background-blend-mode: overlay;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 5rem;
+    
+   
+}
+.content{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    padding: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    z-index: 2;
+
+}
+.form{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.formControl{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.text{
+    border-right: solid 2px rgb(210,210,216);
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
+    padding-bottom: 6rem;
+}
+.text h1{
+    color:rgb(210,210,216);
+   font-size: 2.5rem;
+   font-family: sans-serif;
+}
+.etext{
+    font-size: 3.5rem;
+    font-family: sans-serif;
+}
+.text a{
+    display: block;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    color: rgb(210,210,216);
+    margin-left: 20%;
+    padding-top: 1rem;
+}
+.motor{
+    font-size: 12px;
+    font-family: cursive;
+    font-style: italic;
+    color: rgb(55,173,243);
+    margin-left: 70%;
+    margin-top: -9px;
+}
+.input{
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+
+    
+}
+.input h2{
+    font-family: cursive;
+    margin-bottom: 30px;
+    color: rgb(210,210,216);
+}
+.input a{
+    font-size: 12px;
+    font-family: cursive;
+    font-style: italic;
+    color: rgb(55,173,243);
+    margin-left: 60%;
+
+}
+.label{
+    font-family: cursive;
+    font-size: 14px;
+    font-style: italic;
+    display: inline-block;
+    color: rgb(210,210,216);
+    
+}
+.formGroup input {
+    font-family: cursive;
+    font-style: italic;
+}
+.formGroup label {
+    margin-bottom: 5px;
+}
+.formGroup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btn{
+    display: flex;
+    background-color: white;
+    color: rgb(0,10,50);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    border-radius:5px ;
+    font-family: cursive;
+    font-style: italic;
+    margin-top: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+.icon{
+    font-size: 25px;
+    font-weight: bold;
+}
+.btn:hover .icon{
+    margin-left: .4rem;
+}
+.pbtn{
+    border: none;
+    padding: 0.1rem;
+    font-size: 22px;
+    background-color: inherit;
+    color: rgb(0,10,50);
+    position: absolute;
+    margin-left:-2.5rem;
+    margin-top: 7px;
+    
+}
