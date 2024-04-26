@@ -1,0 +1,147 @@
+.WithdrawalModal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all ease 0.5s;
+     background-image: url("/images/your-image.jpg"); /* Replace with your image path */
+     background-size: cover; /* Fills the entire container */
+      background-position: center; /* Centers the image */
+     background-repeat: no-repeat; /* Prevents image tiling */
+      
+      
+    
+}
+
+.WithdrawalPopUp{
+    padding: 15px 2%;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.WithdrawText{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 100px;
+    padding: 0px 0%;
+    font-size: 15px;
+}
+
+.Withdrawicon{
+    display: flex;
+}
+
+#WithMoneyIcon{
+    font-size: 15px;
+    padding-top: 5px;
+    gap: 15px;
+}
+
+.WithdrawText p{
+    font-size: 15px;
+}
+
+.AvailableText{
+    text-align: center;
+    padding: 20px;
+}
+
+.AvailableText p{
+    font-size: 10px;
+}
+
+.Availableh3{
+    padding: 10px;
+    font-size: 50px;
+}
+
+.AmountText{
+    padding: 10px 1%;
+}
+
+.AmountText p{
+   font-size: 8px;
+}
+
+.AmountText input{
+    border: solid rgb(207, 206, 206) 1px;
+    background-color: black;
+    padding: 3px 2%;
+    border-radius: 5px;
+    width:  100%;
+    color: white;
+}
+
+.WithdrawToText{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    
+}
+
+.WithdrawToText p{
+    font-size: 12px;
+    
+}
+
+#Benefi{
+    border: solid white 1px;
+    border-radius: 7px;
+    padding: 5px 3%;
+    width: 100%;
+}
+
+.Beneficiary{
+    padding: 5px;
+    border: solid rgba(24, 152, 232, 0.914) 2px;
+    border-radius: 7px;
+    font-size: 5px;
+    display: flex;
+    gap: 10px;
+    /* line-height: 20px; */
+}
+
+.Beneficiary p{
+    font-size: 12px;
+    padding: 0px;
+}
+
+
+#Bankicon{
+    font-size: 15px;
+    padding-top: 5px;
+    background-color: rgb(2, 2, 29);
+    border-radius: 200px;
+    padding: 3%;
+}
+
+.Btn{
+    padding: 10px;
+    
+}
+
+.WithdrawalBtn{
+    background-color: rgba(24, 152, 232, 0.914) ;
+    padding: 8px 20%;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    width: 105%;
+  
+}
+
+.WithdrawalBtn:hover{
+    background-color: rgba(12, 121, 189, 0.914) ;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
