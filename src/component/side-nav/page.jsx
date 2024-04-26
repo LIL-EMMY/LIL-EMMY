@@ -13,7 +13,7 @@ import { MdHeadsetMic } from "react-icons/md";
 import { FaArrowsLeftRight } from "react-icons/fa6";
 import { MdRectangle } from "react-icons/md";
 import ThemeToggle from '../ThemeMode/ThemeToggle';
-// import styles from '../ThemeMode/page.module.css'
+// import styles from '../ThemeMode/page.module.css';
 
 
 export default function Sidenav() {
@@ -66,7 +66,7 @@ export default function Sidenav() {
 
 
 {/* import lightmode and darkmode here */}
-<ThemeToggle/>
+      <ThemeToggle/>
 
 
 
