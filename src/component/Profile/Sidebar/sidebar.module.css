@@ -1,0 +1,78 @@
+.container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 100vh;
+    width: 4.7rem;
+    /* background: blue; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.asideCont{
+    position: inherit;
+    top: 0;
+    
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 70px;
+    height: 75px;
+    
+}
+.btn{
+    position: absolute;
+    border-radius: 50%;
+    top: 2rem;
+    right: -1rem;
+}
+.btn button{
+    border: 1px solid black;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+}
+.btn button .btnIcon{
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+}
+
+
+.catIcons{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    justify-content: space-between;
+}
+.catIcons .icons{
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.catIcons .icons div .icon{
+    font-size: 1.5rem;
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+    padding: .5rem;
+
+}
+.catIcons .icons div .profile{
+    color: rgb(95, 95, 252);
+    background: rgb(156, 156, 252);
+    padding: .5rem;
+    border-radius: 3px;
+}
+.headphone{
+    margin: auto;
+}
+.headIcon{
+    font-size: 1.5rem;
+    color: rgb(82, 82, 82);
+}
