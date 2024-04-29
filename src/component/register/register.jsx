@@ -9,7 +9,7 @@ export default function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
+  const [userName, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [phone, setPhone] = useState('');
@@ -27,7 +27,7 @@ export default function Register() {
       setErr('Provide Email');
     } else if (!phone) {
       setErr('Provide Phone number');
-    } else if (!username) {
+    } else if (!userName) {
       setErr('Provide Username');
     } else if (!password) {
       setErr('Provide Password');
@@ -38,6 +38,14 @@ export default function Register() {
     } else {
       setErr(''); // Reset error state if there are no errors
       // Registration logic here...
+      // api request /api/register
+      const res= fetch('http://localhost:3000/api/register/' , {
+        method:"POST",
+        headers:{
+         " Content-Type":"application/json"
+        },
+        body:JSON.stringify({firstName,lastName,email,phone,password,userName})
+      })
     }
   };
 
