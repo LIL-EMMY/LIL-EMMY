@@ -1,6 +1,7 @@
 .dashboardContainer {
-      max-width: 100%;
+      width: 100%;
       height: auto;
+      display: block;
       
 }
 
@@ -20,6 +21,7 @@
       box-shadow: 1px 2px 5px 2.5px rgba(234, 234, 234, 0.6);
       padding: .8rem;
       border: .1rem solid rgb(216, 216, 216);
+      color: rgb(44, 44, 44);
 }
 
 .section1Heading {
@@ -180,15 +182,14 @@
 
 .container2 {
       display: flex;
-      justify-content: space-between;
       justify-content: flex-end;
+      gap: .8rem;
       padding: .8rem 1.2rem 0 0;
-      gap: 1rem;
 }
 
 .SecondSegment {
       display: flex;
-      flex-direction: column;;
+      flex-direction: column;
       gap: 1rem;
 }
 
@@ -222,4 +223,235 @@
       border-radius: .5rem;
       opacity: .9;
       background: repeating-linear-gradient( 45deg, #7a7b99, #8889a8 5px, #4141ff 5px, #4e4eff 25px );
+}
+
+
+/* flip card section goes here my bruv */
+
+.fcard{
+	width: 26.5rem;
+      height: 13.5rem;
+	position:relative;
+	-webkit-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+}
+.cardContainer{
+	perspective:1000;
+	position:relative;
+	width: 26.5rem;
+      height: 13.5rem;
+}
+.front, .back{
+	width:100%;
+	height:100%;
+	position:absolute;
+	backface-visibility:hidden;
+	transition:transform 300ms;
+	transition:transform 300ms,;
+	transition-timing-function:ease-in-out;
+	transform-origin:center top;
+      border-radius: .5rem;
+      box-shadow: 1px 2px 5px 2.5px rgba(234, 234, 234, 0.6);
+      padding: .8rem;
+      border: .1rem solid rgb(216, 216, 216);
+
+      /* css styles */ 
+      
+
+      background: rgba(0, 0, 255, 0.8);
+      background-size: 40px 100%;
+     
+}
+
+.front {
+      color: white;
+}
+
+
+ 
+ .backFlip {
+	transform:rotateY(0deg);
+}
+
+
+
+
+.front1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.f1span{
+      width: 6rem;
+      border-radius: .5rem;
+      gap: .2rem;
+      display: block;
+      border: .1px solid gray;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+}
+
+.f1Icon, .flippyText {
+      display: inline-block;
+      font-size: .95rem;
+}
+
+.flippy {
+      font-size: 1.5rem;
+}
+
+.f2span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: sans;
+}
+
+.front2 {
+      display: block;
+      font-size: .8rem;
+      margin-top: .7rem;
+}
+
+.f2balance {
+      display: block;
+      margin: .6rem 0;
+
+}
+
+.f2con {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+}
+
+.f2money {
+      display: inline-block;
+      font-size: 1.95rem;
+      font-weight: bold;
+      color: rgb(49, 49, 49);
+}
+
+.f2eye {
+      display: inline-block;
+      font-size: .85rem;
+      font-weight: bold;
+}
+
+.f3 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+}
+
+.encrypt, .f3eye {
+      display: inline-block;
+      font-size: 1.2rem;
+}
+
+.encrypt::placeholder {
+      font-size: 1.4rem;
+}
+
+.encrypt {
+      border: none;
+      padding: .3rem;
+      background-color: transparent;
+}
+
+.f4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+     
+}
+
+.name {
+      display: inline-block;
+      color: black;
+
+}
+
+.date {
+      display: flex;
+      gap: .2rem;
+      flex-direction: column;
+      align-items: center;
+}
+
+.date1, .date2 {
+      display: inline-block;
+      font-size: .8rem;
+}
+
+.cardType {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* card back */
+.back {
+      padding: 0;
+      background: linear-gradient(to right, rgb(0, 158, 221), blue);
+      color: white;     
+}
+
+.b1 {
+      display: flex;
+      justify-content: space-between;
+      padding: .8rem;
+}
+
+
+.whiteSpace {
+      width: 100%;
+      max-width: 100%;
+      height: 2rem;
+      background-color: white;
+      margin-top: 2rem;
+}
+
+.b3 {
+      margin-top: 1rem;
+      padding: .8rem;
+      width: 100%;
+      height: auto;
+}
+
+.b3Sub {
+      display: flex;
+      gap: 1.5rem;
+      width: 100%;
+      align-items: center;
+}
+
+.b3Text {
+      font-size: .85rem;
+      display: inline-block;
+}
+
+.b3WhiteSpace {
+      width: 80%;
+      background-color: white;
+      height: 1.7rem;
+}
+
+.b3LastText {
+      display: inline-block;
+      font-size: 1.1rem;;
+}
+
+
+/* for chart */
+
+.chart{
+      width: 54rem;
+      height: auto;
+      position: relative;
+      background-color: rgba(128, 128, 255, 0.2);
 }

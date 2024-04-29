@@ -7,22 +7,31 @@ import { FaMoneyBill } from "react-icons/fa";
 import { MdOutlinePayment } from "react-icons/md";
 import { TfiReload } from "react-icons/tfi";
 import { GoArrowUpRight } from "react-icons/go";
-import Chart from 'chart.js/auto';
+import { CgEditFlipH } from "react-icons/cg";
+import BarChart from "@/component/chartBigDaav/page";
+import React, {useState} from "react";
+import { GoEye } from "react-icons/go";
+import { HiOutlineEyeOff } from "react-icons/hi";
+import { PiDotsThreeOutlineBold } from "react-icons/pi";
 
-import React, {useEffect} from "react"
-
-const BarChart = () => {
- 
-      return (
-            <div><canvas className={styles.acquisitions}></canvas></div>
-      )
-}
 
 
 
 
 const Dashboard = () => {
+      const [flip, setFlip] = useState(true);
+      const [eye, setEye] = useState(true);
+
+      function flipCardNow() {
+            setFlip((prev)=> !prev);
+      }
+
+      function eyeOff() {
+            setEye((prev)=> !prev);
+      }
+      
       return(
+
             <section className={styles.dashboardContainer}>
 
                   {/* card 1 container goes here */}
@@ -54,10 +63,88 @@ const Dashboard = () => {
 
                         </div>
 
-                        {/* card 2 */}
-                        <div className={`${styles.card1Section2} ${styles.card}`}>
-                              <h1>pending...</h1>
+                        {/* flip card 2 */}
+                  <div className={styles.fcardContainer}>
+                        <div className={styles.fcard}>
+                                  
+                                    { 
+
+                                    flip ? 
+                                    <div className={` ${styles.front}  ${styles.backFlip}`}>
+                                          
+                                          <div className={styles.front1}>
+                                                <span className={styles.f1span}
+                                                onClick={flipCardNow}
+                                                > <span className={styles.f1Icon}>< CgEditFlipH className={styles.flippy}/> </span> <span className={styles.flippyText}>Flip Card</span></span>
+                                                <span className={styles.f2span}>Eagle Bank</span>
+                                          </div> 
+
+                                          <div className={styles.front2}>
+                                                <span className={styles.f2balance}>Balance</span>
+
+                                                <div className={styles.f2con}>
+
+                                                      <div className={styles.cashCon}>
+                                                               { eye ?
+                                                                  
+                                                                 <span className={styles.f2money}><PiDotsThreeOutlineBold/><PiDotsThreeOutlineBold/></span>:
+                                                                  <span className={styles.f2money}><span className={styles.dollar}>$</span>12000</span>
+                                          
+                                                                }
+                                                      </div>
+
+
+                                                      <div className={styles.eyeCon}>
+                                                            { eye ?
+                                                            <span className={styles.f2eye} onClick={eyeOff}> <HiOutlineEyeOff/> </span>:
+                                                            <span className={styles.f2eye} onClick={eyeOff}> <GoEye/> </span>
+                                                            }
+                                                      </div>
+
+                                                </div>
+                                          </div>
+
+                                          <div className={styles.f3}>
+                                                      <input type="password" name="encrypt" id="encrypt" className={styles.encrypt} placeholder="2234, 2239, 0984, 3754"/>
+                                                      <span className={styles.f3eye}>()</span>
+
+                                          </div>
+
+                                          <div className={styles.f4}>
+                                                <span className={styles.name}>Anthony David</span>
+                                                <div className={styles.date}>
+                                                      <span className={styles.date1}> Expires</span>
+                                                      <span className={styles.date2}>8/29</span>
+                                                </div>
+                                                <span className={styles.cardType}>Visa</span>
+                                          </div>
+
+                              </div> :
+
+                              <div className={`${styles.back} `}>
+                                    <div className={styles.b1}>
+                                          <span className={styles.b1details}> More Details</span>
+                                          <span className={styles.f1span} onClick={flipCardNow}> <span className={styles.f1Icon}>< CgEditFlipH className={styles.flippy}/> </span> <span className={styles.flippyText}>Flip Card</span></span>
+
+                                    </div>
+
+                                    <div className={styles.whiteSpace }></div>
+
+                                    <div className={styles.b3}>
+                                          <span className={styles.b3Text}>Authorized Signature</span>
+
+                                          <div className={styles.b3Sub}>
+                                                <div className={styles.b3WhiteSpace}></div>
+                                                <span className={styles.b3LastText}>223</span>
+                                          </div>
+                                          
+                                    </div>
+                              </div>
+
+                            }
+                              
                         </div>
+                  </div>
 
                         {/* card 3 */}
                         <div className={`${styles.card1Section3} ${styles.card}`}>
@@ -79,12 +166,15 @@ const Dashboard = () => {
 
                   </div>
 
+                  {/* segment 2 */}
+
                   <div className={styles.container2}>
+                        
                         <div className={styles.chart}>
-                                    <h1>Chart Pending...</h1>
+                              <BarChart/>
                         </div>     
 
-                        <div className={styles.SecondSegment}>
+                  <div className={styles.SecondSegment}>
                         {/*SEGMENT 2 CARD 1 */}
                         <div className={`${styles.card1Section3} ${styles.card}`}>
                                     <span className={styles.card3Heading}>Expenses</span>

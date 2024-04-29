@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 // import "./globals.css";
 import { useContext } from "react";
 import { ThemeProvider } from "@/component/ThemeMode/Context";
+import "./globals.css";
 import Navbar from "@/component/navbar/page";
 import Sidenav from "@/component/side-nav/page";
 
@@ -27,6 +28,11 @@ export default function RootLayout({ children }) {
         
 
       </body>
+      <body className={inter.className}>
+       <Navbar/> 
+        {children}
+        
+        </body>
     </html>
   );
 }
