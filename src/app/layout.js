@@ -21,18 +21,13 @@ export default function RootLayout({ children }) {
 
           <Navbar/>
           <Sidenav/>
-          {/* {children} */}
+          {children}
           
         </ThemeProvider>
 
         
 
       </body>
-      <body className={inter.className}>
-       <Navbar/> 
-        {children}
-        
-        </body>
     </html>
   );
 }

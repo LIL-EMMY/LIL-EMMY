@@ -37,6 +37,7 @@
     margin-left: 40px;  
     transition: opacity 0.3s ease; 
     display: flex;
+    position:absolute;
 }
 
 .sidebar:hover {
@@ -47,13 +48,17 @@
 
 
 .toggle{
-    display: flex;
-    border: 1px solid black;
+    /* display: flex; */
+    border: 1px solid gray;
     justify-content: space-between;
     align-items: center;
-    padding: 3px;
-    border-radius: 3px;
+    padding: 5px;
+    border-radius: 15px;
     position: relative;
+    display: inline-block;
+    transform: rotate(-90deg);
+    /* transition: all 0.3s ease; */
+    cursor: pointer;
 
 }
 
@@ -66,5 +71,11 @@
     right:2px;
 
 }
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh ;
+    justify-content: space-between;
+  }
 
 

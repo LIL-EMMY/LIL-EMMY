@@ -3,23 +3,24 @@
 import React from "react";
 import { useContext } from "react";
 import ThemeContext from "./Context";
-import { GoSun } from "react-icons/go";
-import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa6";
-import styles from "./page.module.css";
+// import styles from '@/component/ThemeMode/page.module.css'
+import { CgMoon, CgSun } from 'react-icons/cg'
 import styles from '@/component/side-nav/page.module.css';
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
 
-  return (
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext)
+  console.log(theme)
+
+  return ( <div>
     <div className={styles.toggle}>
-      <button className={<GoSun onClick={toggleTheme} />}>
-        {theme === "light" ? "Dark" : "Light"}
-        <FaMoon onClick={toggleTheme} style={{ backgroundColor: "black" }} />
-        <FaSun onClick={toggleTheme} style={{ backgroundColor: "white" }} />
-      </button>
+      <CgSun style={{ fontSize: '1.5em',  marginBottom: '10px' }}/>
+          <div className={styles.ball} onClick={toggleTheme} style={theme=="light" ? {left:'2px'}: {right:'2px',background:"white"}}></div>
+      <CgMoon style={{ fontSize: '1.5em', marginBottom: '10px' }}/>
     </div>
+
+     
+  </div>
   );
 };
 

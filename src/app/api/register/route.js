@@ -1,0 +1,87 @@
+import userModel from "@/models/users";
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer"
+import bcrypt from "bcryptjs"
+import connectDb from "@/utils/db";
+
+
+
+export const POST= async(request)=>{
+    // ?
+// destructure  incoming user values
+
+const {firstName,lastName,email,userName,phone,password}=await request.json()
+
+// send email function
+function sendOTPByEmail(email, otp) {
+    try{
+      
+      // Create a nodemailer transporter with your email service settings
+      const transporter = nodemailer.createTransport({
+        service: 'gmail', // Use the email service you prefer
+        port: 587,
+        auth: {
+          user: process.env.EMAIL_ADDRESS,  
+          pass: process.env.EMAIL_APP_PASSWORD, 
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false,
+        },
+      });
+       
+      // Email content
+      const mailOptions = {
+        from: process.env.EMAIL_ADDRESS,
+        to: email,
+        subject: 'Verification Code for Registration',
+        text: `Your OTP (One-Time Password) for registration is: ${otp}`,
+      };
+    
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error('Error sending email:', error);
+        } else {
+          console.log('Email sent:', info.response);
+        }
+      });
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+//   generater email otp
+function generateOTP() {
+    return Math.floor(10000 + Math.random() * 90000).toString();
+  }
+
+
+  function generateAccountNumber(){
+    return Math.floor(2000002031 + Math.random()* 999999999).toString()
+  }
+
+  try {
+    // call datbase conection
+    connectDb
+    // has user password
+    const salt=bcrypt.genSaltSync(16)
+    const hashPassword=bcrypt.hashSync(password,salt)
+      //   save into db
+
+      const accountNo=generateAccountNumber();
+      const emailOtp=generateOTP();
+        const user=await new userModel({firstName:firstName, lastName:lastName, email:email, phone:phone, userName:userName, password:hashPassword, accountNumber:accountNo, emailOtp:emailOtp})
+        await user.save();
+
+        if(user){
+
+           return  new NextResponse(JSON.stringify({ message: `user registred successfully` }), {status:200})
+        }
+    } catch (error) {
+        console.log(error.message)
+      return  new NextResponse(JSON.stringify({ message: `server Errory`  }), {status:500})
+    
+  }
+}

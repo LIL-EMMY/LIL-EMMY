@@ -1,7 +1,8 @@
 // components/contexts/ThemeContext.js
 'use client'
+import Style from 'react'
 import React from 'react'
-import styles from './page.module.css'
+import styles from '@/component/ThemeMode/page.module.css'
 import { createContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
