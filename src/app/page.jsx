@@ -9,6 +9,7 @@ import Dashboard from "@/component/dashboardBigDaav/page";
 export default function Home() {
   return (
     <>
+    
       <Dashboard/>
       
     </>

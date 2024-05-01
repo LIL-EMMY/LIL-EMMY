@@ -1,3 +1,4 @@
+
 .logo{
     color: rgb(0, 220, 209);
     font-size: 60px;
@@ -10,7 +11,6 @@
     padding-right: 20px;
     font-size: 30px;
 }
-
 
 .side{
     background-color: rgb(3, 11, 18);
@@ -50,25 +50,25 @@
 .toggle{
     /* display: flex; */
     border: 1px solid gray;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
+    width: fit-content;
+    padding: 15px 8px;
+    margin-left: 18px;    
     border-radius: 15px;
     position: relative;
-    display: inline-block;
-    transform: rotate(-90deg);
-    /* transition: all 0.3s ease; */
     cursor: pointer;
-
+}
+.sun, .moon{
+    font-size: 1.5rem;
 }
 
 .ball{
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background: black;
     position: absolute;
-    right:2px;
+    left:7.5px;
+    
 
 }
 .main{
