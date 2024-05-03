@@ -4,6 +4,7 @@ import { useState } from "react";
 import style from "./page.module.css";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
   const [firstName, setFirstName] = useState('');
@@ -14,6 +15,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [err, setErr] = useState('');
+  const router=useRouter();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -39,13 +41,32 @@ export default function Register() {
       setErr(''); // Reset error state if there are no errors
       // Registration logic here...
       // api request /api/register
-      const res= fetch('http://localhost:3000/api/register/' , {
+      const res= await fetch('http://localhost:3000/api/register' , {
         method:"POST",
         headers:{
-         " Content-Type":"application/json"
+         "Content-Type":"application/json"
         },
         body:JSON.stringify({firstName,lastName,email,phone,password,userName})
       })
+      try {
+         await res.json();
+      if(res.status==200){
+        router.push('/confirmEmail')
+      }
+
+      else if(res.status==400){
+        setErr("email Alredy exist");
+      }
+
+      else {
+        setErr('Server Error');
+        throw new Error('server Error')
+      }
+      } catch (error) {
+        console.log('thisi sthe err :', error)
+      }
+     
+
     }
   };
 
@@ -147,6 +168,7 @@ export default function Register() {
               />
               {err === 'Confirm password to proceed!..' && <p className={style.err}>{err}</p>}
               {err === 'Passwords do not match' && <p className={style.err}>{err}</p>}
+              {err === 'email Alredy exist' && <p className={style.err}>{err}</p>}
             </div>
             
            
