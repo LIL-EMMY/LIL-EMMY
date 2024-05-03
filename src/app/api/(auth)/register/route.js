@@ -64,21 +64,35 @@ function generateOTP() {
 
   try {
     // call datbase conection
-    connectDb
-    // has user password
+    await connectDb()
+
+    // chehck if user email exists in the database
+    const userEmailExists= await userModel.findOne({email:email})
+
+          if(userEmailExists){
+            return new NextResponse(JSON.stringify("user email already exists"), {status:400})
+          }
+          else{
+              // has user password
     const salt=bcrypt.genSaltSync(16)
     const hashPassword=bcrypt.hashSync(password,salt)
       //   save into db
 
       const accountNo=generateAccountNumber();
       const emailOtp=generateOTP();
-        const user=await new userModel({firstName:firstName, lastName:lastName, email:email, phone:phone, userName:userName, password:hashPassword, accountNumber:accountNo, emailOtp:emailOtp})
+      // email otp expiration(10 mins)
+      const emailOtpExpires=Date.now() + 100000;
+        const user=await new userModel({firstName:firstName, lastName:lastName, email:email, phone:phone, userName:userName, password:hashPassword, accountNumber:accountNo, emailOtp:emailOtp,emailOtpExpires})
         await user.save();
 
         if(user){
-
+          // send user an eamil
+          sendOTPByEmail(email,emailOtp);
            return  new NextResponse(JSON.stringify({ message: `user registred successfully` }), {status:200})
         }
+          }
+    
+    
     } catch (error) {
         console.log(error.message)
       return  new NextResponse(JSON.stringify({ message: `server Errory`  }), {status:500})

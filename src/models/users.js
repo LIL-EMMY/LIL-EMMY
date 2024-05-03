@@ -62,6 +62,12 @@ const userSchema=new mongoose.Schema({
        
 
     },
+
+    emailOtpExpires:{
+        type:Number,
+        
+
+    }
     
       
 },{timestamps:true})
