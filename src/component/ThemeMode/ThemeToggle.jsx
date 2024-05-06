@@ -14,9 +14,11 @@ const ThemeToggle = () => {
 
   return ( <div>
     <div className={styles.toggle}>
-      <CgSun style={{ fontSize: '1.5em',  marginBottom: '10px' }}/>
-          <div className={styles.ball} onClick={toggleTheme} style={theme=="light" ? {left:'2px'}: {right:'2px',background:"white"}}></div>
-      <CgMoon style={{ fontSize: '1.5em', marginBottom: '10px' }}/>
+      <div className={styles.sun}><CgSun/></div>
+          <div className={styles.ball} onClick={toggleTheme} style=
+          {theme=="light" ? {up:'2px'}: {down:'2px',background:"white"}}>
+          </div>
+      <div className={styles.moon}><CgMoon/></div>
     </div>
 
      

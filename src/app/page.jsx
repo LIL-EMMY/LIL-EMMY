@@ -12,6 +12,10 @@ export default function Home() {
     <>
   
       <Register/>
+<div className="body">
+      <Dashboard/>
+
+</div>
       
     </>
     

@@ -23,10 +23,10 @@ export const POST = async (request) => {
                    return new NextResponse(JSON.stringify({body:"otp has expired"}), {status: 400})    
                }
                else{
-                    // verify useremail
-                    user.emailVerified=true
-                    user.emailOtp=undefined
-                    await user.save() 
+                    // verify useremail()
+                    user.emailVerified=true //we are change the emailVerified field in the Db from true to false
+                    user.emailOtp=undefined 
+                    await user.save() //we are updating the user table in the database
                    return new NextResponse(JSON.stringify({body:"otp valid"}), {status: 200}, )
                 }
                 
