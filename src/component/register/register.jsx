@@ -15,6 +15,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [err, setErr] = useState('');
+  const [loader,setLoader]=useState(false);
   const router=useRouter();
 
   const submitHandler = async (e) => {
@@ -38,6 +39,8 @@ export default function Register() {
     } else if (password !== confirmPassword) {
       setErr('Passwords do not match');
     } else {
+      // set loader to true, so it will display while we make our request
+      setLoader(true)
       setErr(''); // Reset error state if there are no errors
       // Registration logic here...
       // api request /api/register
@@ -51,10 +54,11 @@ export default function Register() {
       try {
          await res.json();
       if(res.status==200){
-        router.push('/confirmEmail')
+        router.push('/confirmemail')
       }
 
       else if(res.status==400){
+        setLoader(false)
         setErr("email Alredy exist");
       }
 
@@ -174,7 +178,11 @@ export default function Register() {
            
             <button className={style.btn}>
               Create Account <MdOutlineArrowForwardIos className={style.icon} />
-            </button>
+
+         {
+         loader &&  <div className="loader"></div>   
+         } 
+         </button>
           </form>
         </div>
       </div>

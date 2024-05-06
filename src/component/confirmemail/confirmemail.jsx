@@ -14,13 +14,16 @@ export default function Confirmemail() {
   const router=useRouter()
   const [showPassword, setShowPassword]= useState(false);
   const [password, setPassword]= useState('');
+  const [email, setEmail]= useState('');
+  const [err,setErr]=useState('')
+  const [resendOtp,setResendOtp]=useState(false)
 
   const submitHandler=async (e)=>{
     // prevent default form submission
     console.log(e)
     e.preventDefault()
-
-    const res=await fetch('http://localhost/3000/api/confirmEmail',{
+    
+    const res=await fetch('http://localhost:3000/api/confirmOtp',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -30,14 +33,35 @@ export default function Confirmemail() {
     })
 
     await res.json()
-
+    console.log(res)
     if(res.status==200){
       router.push('/login')
+    }
+
+    else if(res.status==401){
+      setResendOtp(true)
+      setErr('otp is invalid')
+    }
+    else if(res.status==400){
+      setResendOtp(true)
+
+      setErr('otp has expires')
     }
 
   }
   const togglePasswordValue = ()=>{
     setShowPassword(!showPassword)
+  }
+
+  // to  resend otp
+  const otpResend=async()=>{
+    const res=await fetch('http://localhost:3000/api/otpResend', {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({email})
+    })
   }
 
  
@@ -48,11 +72,12 @@ export default function Confirmemail() {
         <div className={style.content}>
           <div className={style.input}>
             <h2>Confirm Email</h2>
+           {err && <div className="err"> {err}</div> } 
            <form action=""   onSubmit={submitHandler}>
            <div className={style.formGroup}>
                     <label htmlFor="" className={style.label}>Email:</label>
                     <input type="email" placeholder="Email" 
-                    className={style.formControl} />
+                    className={style.formControl} onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
            <div className={style.formGroup}>
                     <label htmlFor="" className={style.label}>Email otp:</label>
@@ -63,6 +88,9 @@ export default function Confirmemail() {
                     <button className={style.pbtn} onClick={togglePasswordValue} >
                       {showPassword ? <FaEyeSlash  /> : <FaRegEye/>}
                     </button>
+                    {
+                      resendOtp && <button >Resend</button>
+                    }
                 </div>
                
           
