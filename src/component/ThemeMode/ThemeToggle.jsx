@@ -16,7 +16,8 @@ const ThemeToggle = () => {
     <div className={styles.toggle}>
       <div className={styles.sun}><CgSun/></div>
           <div className={styles.ball} onClick={toggleTheme} style=
-          {theme=="light" ? {up:'2px'}: {down:'2px',background:"white"}}></div>
+          {theme=="light" ? {up:'2px'}: {down:'2px',background:"white"}}>
+          </div>
       <div className={styles.moon}><CgMoon/></div>
     </div>
 

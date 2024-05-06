@@ -9,8 +9,10 @@ import Dashboard from "@/component/dashboardBigDaav/page";
 export default function Home() {
   return (
     <>
-    
+<div className="body">
       <Dashboard/>
+
+</div>
       
     </>
     
