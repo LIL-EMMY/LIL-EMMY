@@ -1,3 +1,4 @@
+
 .logo{
     color: rgb(0, 220, 209);
     font-size: 60px;
@@ -10,7 +11,6 @@
     padding-right: 20px;
     font-size: 30px;
 }
-
 
 .side{
     background-color: rgb(3, 11, 18);
@@ -37,11 +37,45 @@
     margin-left: 40px;  
     transition: opacity 0.3s ease; 
     display: flex;
+    position:absolute;
 }
 
 .sidebar:hover {
     color: aqua;
 }
 
+/* themetoggle css */
+
+
+.toggle{
+    /* display: flex; */
+    border: 1px solid gray;
+    width: fit-content;
+    padding: 15px 8px;
+    margin-left: 18px;    
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+.sun, .moon{
+    font-size: 1.5rem;
+}
+
+.ball{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    /* left:7.5px; */
+    
+
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh ;
+    justify-content: space-between;
+  }
 
 

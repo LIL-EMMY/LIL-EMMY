@@ -1,0 +1,184 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4.5rem;
+    padding: 1rem;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+}
+.navbar .dashboard h2{
+    margin-left: 1rem;
+}
+
+.search{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+.search input{
+    border: none;
+    padding: .5rem 1rem;
+}
+.search input:focus{
+    border: none;
+    outline: none;
+}
+
+.navend{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.navend .bellicon{
+    font-size: 1.4rem;
+}
+.navend img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.profileContainer{
+    margin-left: 7rem;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+.optionList{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    height: 31.7rem;
+    padding: 1rem;
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    position: fixed;
+    top: 6.5rem;
+    border-radius: 3px;
+    width: 15rem;
+}
+.optionList div{
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    /* margin-top: 1rem; */
+    
+}
+.optionList div:hover, 
+.optionList .myProfile{
+    background: rgb(221, 221, 221);
+    border-radius: 5px;
+}
+
+.profileSection{
+    /* flex: 3; */
+    /* margin: 0 1rem; */
+    position: relative;
+    margin: 0 0 0 19rem;
+    width: 56rem;
+}
+.profileSection .profile{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 3px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+.profile div h3{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+.profile div img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.profile .imgName{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.imgName .name p{
+    font-size: 1.8rem;
+}
+.editBtn button{
+    display: flex;
+    gap: .5rem;
+    padding: .4rem .8rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+
+
+.accountDetails{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+    border-radius: 3px;
+}
+.accountDetails h3{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.accountDetails p{
+    color: grey;
+}
+.accountDetails div .h{
+    font-size: 1.5rem;
+}
+.accNmNu{
+    display: flex;
+    gap: 15rem;
+}
+
+
+
+.psnlInfo{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    border-radius: 3px;
+}
+.psnlInfo div .h{
+    font-size: 1.5rem;
+}
+.psnlInfo h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.psnlInfo p{
+    color: rgb(114, 114, 114);
+}
+.fstLstNm{
+    display: flex;
+    gap: 19.5rem;
+}
+.emlPhn{
+    display: flex;
+    gap: 8rem;
+}

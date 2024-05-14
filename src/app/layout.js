@@ -1,5 +1,10 @@
 import { Inter } from "next/font/google";
+// import "./globals.css";
+import { useContext } from "react";
+import { ThemeProvider } from "@/component/ThemeMode/Context";
 import "./globals.css";
+import Navbar from "@/component/navbar/page";
+import Sidenav from "@/component/side-nav/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +16,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} main`}>
+        <ThemeProvider>
+
+          <Navbar/>
+          <Sidenav/>
+          {children}
+          
+        </ThemeProvider>
+
+        
+
+      </body>
     </html>
   );
 }

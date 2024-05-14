@@ -1,0 +1,39 @@
+
+.toggle{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    border-radius: 3px;
+    position: relative;
+    font-size: 1.5rem;
+
+}
+
+.ball{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    right:2px;
+
+}
+.theme-light {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .theme-dark {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
