@@ -9,17 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icon": "^1.0.0",
-=======
-    "chart.js": "^4.4.2",
-    "next": "14.2.2",
-    "react": "^18",
-    "react-dom": "^18",
->>>>>>> 249c688f8b1a95ead029494c36d758d33c1eae83
     "react-icons": "^5.1.0"
   },
   "devDependencies": {
