@@ -1,3 +1,4 @@
+
 import { Inter } from "next/font/google";
 // import "./globals.css";
 import { useContext } from "react";
@@ -5,8 +6,10 @@ import { ThemeProvider } from "@/component/ThemeMode/Context";
 import "./globals.css";
 import Navbar from "@/component/navbar/page";
 import Sidenav from "@/component/side-nav/page";
+import Providers from "./providers/providers";
 
 const inter = Inter({ subsets: ["latin"] });
+// we cant use use session in here because metadat only worrks onserver component, se we have to create a component called providers
 
 export const metadata = {
   title: "Create Next App",
@@ -18,14 +21,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} main`}>
         <ThemeProvider>
+          {/* import providers to be aPPLIED ACROSS ALL PAGE,OMPONENTS */}
+          <Providers>
 
-          <Navbar/>
-          <Sidenav/>
-          {children}
-          
+            <Navbar />
+            {/* <Sidenav /> */}
+            {children}
+
+          </Providers>
         </ThemeProvider>
 
-        
+
 
       </body>
     </html>

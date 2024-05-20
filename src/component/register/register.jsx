@@ -54,7 +54,8 @@ export default function Register() {
       try {
          await res.json();
       if(res.status==200){
-        router.push('/confirmemail')
+        router.push('/confirmEmail')
+        
       }
 
       else if(res.status==400){
