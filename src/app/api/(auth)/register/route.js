@@ -78,11 +78,11 @@ function generateOTP() {
     const hashPassword=bcrypt.hashSync(password,salt)
       //   save into db
 
-      const accountNo=generateAccountNumber();
+      const accountNumber=generateAccountNumber();
       const emailOtp=generateOTP();
       // email otp expiration(10 mins)
       const emailOtpExpires=Date.now() + 100000;
-        const user=await new userModel({firstName:firstName, lastName:lastName, email:email, phone:phone, userName:userName, password:hashPassword, accountNumber:accountNo, emailOtp:emailOtp,emailOtpExpires})
+        const user=await new userModel({firstName:firstName, lastName:lastName, email:email, phone:phone, userName:userName, password:hashPassword, accoutNumber:accountNumber, emailOtp:emailOtp,emailOtpExpires})
         await user.save();
 
         if(user){
