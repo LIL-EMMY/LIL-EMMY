@@ -7,17 +7,16 @@ import Dashboard from "@/component/dashboardBigDaav/page";
 import Register from '@/component/register/register';
 
 
+
 export default function Home() {
   return (
-    <>
-  
-      <Register/>
-<div className="body">
-      <Dashboard/>
+    <div>
+      <Dashboard />
+      <Register />
 
-</div>
+    </div>
       
-    </>
+    
     
   );
 }
