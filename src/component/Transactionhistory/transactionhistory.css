@@ -1,0 +1,39 @@
+
+#status1{
+    padding: 3px;
+    background-color: rgb(165, 223, 203);
+    color: rgb(7, 139, 12);
+    border-radius: 5px;
+}
+#status2{
+    padding: 3px;
+    background-color: rgb(212, 191, 164);
+    color: rgb(255, 145, 0);
+    border-radius: 5px;
+}
+#status3{
+    padding: 3px;
+    background-color: rgb(255, 166, 166);
+    color: rgb(255, 0, 0);
+    border-radius: 5px;
+} 
+
+table , td, th{
+    border: solid 1px transparent;
+    
+}
+table{
+    margin-left: 10%;
+    margin-top: 20px;
+}
+tr th{
+    padding-right: 7rem;
+    padding-bottom: 2rem;
+}
+tr td{
+    padding-right: 7rem;
+    padding-bottom: 2rem;
+}
+thead{
+    background-color: rgb(173, 173, 173);
+}
