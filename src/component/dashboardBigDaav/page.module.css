@@ -337,6 +337,7 @@
       display: inline-block;
       font-size: .85rem;
       font-weight: bold;
+      cursor: pointer;
 }
 
 .f3 {

@@ -23,7 +23,7 @@ import { useSession } from "next-auth/react";
 
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
       const [stateEmail,setStateEmail]=useState('')
       const [loader,setLoader]=useState(false)
 //       // Make a get request to the api/db to  get user balance
@@ -93,7 +93,7 @@ const Dashboard = () => {
                                     </div>
 
                                     <div className={styles.section1Heading2}>
-                                          <span className={styles.heading3}> </span>
+                                          <span className={styles.heading3}> ${props.balance}</span>
                                           <span className={styles.heading4}><span className={styles.eyeCon}><TbEye className={styles.eye} /></span></span>
                                     </div>
 
@@ -129,14 +129,14 @@ const Dashboard = () => {
 
                                                             <div className={styles.front2}>
                                                                   <span className={styles.f2balance}>Balance</span>
-
+                                                                              {`$${props.balance}`}
                                                                   <div className={styles.f2con}>
 
                                                                         <div className={styles.cashCon}>
                                                                               {eye ?
 
                                                                                     <span className={styles.f2money}><PiDotsThreeOutlineBold /><PiDotsThreeOutlineBold /></span> :
-                                                                                    <span className={styles.f2money}><span className={styles.dollar}>$</span>12000</span>
+                                                                                    <span className={styles.f2money}><span className={styles.dollar}></span>{`$${props.balance}`}</span>
 
                                                                               }
                                                                         </div>
@@ -262,7 +262,10 @@ const Dashboard = () => {
                               </div>
                         </div>
 
-
+                                          <div>
+                                          <p>use session Session</p>
+                                          <pre>{JSON.stringify(session)}</pre>
+                                          </div>
 
                   </section>
             )

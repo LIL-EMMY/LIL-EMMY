@@ -15,7 +15,8 @@ export const POST=async (req)=>{
         if(user){
             // send user full name
             const fullname=`${user.firstName} ${user.lastName}`
-        return new NextResponse(JSON.stringify({fullname}), {status:200})
+            const balance=user.balance
+        return new NextResponse(JSON.stringify({fullname,balance}), {status:200})
 
         }
         else{

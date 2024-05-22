@@ -1,45 +1,47 @@
-"use client"
+
 import React from 'react'
 import Dashboard from "@/component/dashboardBigDaav/page";
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/navigation";
+
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { redirect } from 'next/navigation';
+import axios from "axios"
 export default async function DashboardPage() {
   // const session = useSession()
-  const router = useRouter()
+  
   // uwe use getServerSession if we want to to get sesson in a server componenet
   const session=await getServerSession(authOptions)
   // const session=await getServerSession(authOptions)
 
-  console.log("this is the session " +  session)
+  console.log("this is the session  email " +  session?.user.email)
+  const userEmail=session?.user.email
+  const getBalance=async(email)=>{
+    try{
+      const res=await axios.get(`http://localhost:3000/api/checkAccount/${email}`)
+        console.log(res.data.balance)
+         const balance=res.data.balance
+         return balance
   
-  const { data, status } = session
-  
-
-  // getting the logged in user email
-   console.log(session?.data?.user.email)
-   const email=session?.data?.user.email
-  //  make a request to get all user details
-  // hoisted
-  const getBalance=async ()=>{
-    const res=await fetch('/api/getBalance/',{
-     method:"POST",
-     headers:{
-      "Content-Type":"application/json"
-     },
-     body:JSON.stringify({email})
-    })
-
+    }
+    catch(err){
+      console.log(err)
+    }
   }
+  
+  
+  const userBalance=await getBalance(userEmail)
+  console.log(userBalance)
 
-  if (status == 'unauthenticated') {
-        router.push('/login')
+  if (!session) {
+     return redirect('/login')
   }
   return (
-    <div className="body">
-      <Dashboard/>
+    <div className="body">  
+      <Dashboard balance={userBalance}/>
+      <pre>{JSON.stringify(session, null, 2)}</pre>
 
+      {/* teach them logout */}
+     
 </div>
   )
 }

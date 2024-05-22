@@ -37,7 +37,7 @@ export default function Login() {
       const res=await signIn('credentials',{username,password,redirect:false})
       console.log("response: ", res)
       if(res.ok){
-        router.push('/dashboard')
+        router.replace('/dashboard')
       }
       else{
         // show user error 

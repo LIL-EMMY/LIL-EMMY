@@ -16,8 +16,11 @@ export default function Quicktransfer() {
   const [showAmount, setShowAmount] = useState(false)
   const [err, setErr] = useState(false)
   const [name, setName] = useState('')
+  const [loader,setLoader]=useState(false)
+  const [balance,setBalance]=useState('')
 console.log(acctNumber)
   const submitHandler =async(e) => {
+    setLoader(true)
     e.preventDefault()
     if (!acctNumber || acctNumber.length < 10) {
       setErr('provide 10 digits acct number')
@@ -27,15 +30,26 @@ console.log(acctNumber)
       try{
          // make request to chehck balance uisng axios instead of fectch 
          let accountNumber=acctNumber
+         console.log(accountNumber)
      const res=await axios.post('/api/checkAccount',{accountNumber})
     //  await res.json();
      if(res.status==200){
-      setName(res.data)
+      console.log(res)
+      setName(res.data.fullname)
+      setBalance(res.data.balance)
+      setLoader(false)
+      setErr('')
       // console.log(name)
+      // make request to transfer
+
+
      }
       }
       catch(err){
+        setErr('Invalid Eagle Account number')
         console.log(err)
+        setLoader(false)
+        setName('')
       }
      
     }
@@ -73,6 +87,7 @@ console.log(acctNumber)
           </div>
         </div>
         <div className={styles.card2}>
+          {err ? (<div className="err"> {err}</div> ): " "}
           <form action="" className={styles.form} onSubmit={submitHandler}>
             <div className={styles.formBody}>
               <h2>Quick Transfer</h2>
@@ -84,15 +99,18 @@ console.log(acctNumber)
                   placeholder="1234 1234 1234 1234"
                   onChange={(e) => (setAcctNumber(e.target.value))}
                 />
-                <button type="submit">check</button>
+                {loader && ( <div className="dotLoader" style={{color:"white"}}></div>)}
+                {name ? ( <div style={{color:"white"}}> {name}</div> ): " "}
+               
+              {!name ? (<button type="submit">check</button>) : ""}  
               </div>
-              {showAmount && (
+              {name && (
                 <>
                    <div >           
                   <label htmlFor="">Amount</label>
                   <input type="text" name="amount" id="" placeholder="$1000" />
               </div>
-                  <button type="submit">Continue</button>
+                  <button  type="submit"  style={{backgroundColor : balance<=0 ? 'gray': "rgb(6, 177, 230);"}} disabled={balance<=  0 ? true : false} >{balance<=0 ? 'disabled' : "transfer"}</button>
                  
                 </>
                
