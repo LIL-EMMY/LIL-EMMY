@@ -70,7 +70,8 @@ const userSchema=new mongoose.Schema({
     },
 
     TransferPin:{
-    Type:Number,
+    type:Number,
+    default:1111
     
     }
     
