@@ -9,6 +9,7 @@ import Piechart from "../Analytics/Piechart/page";
 import visacard from "../image/visacard.PNG";
 import axios from "axios"
 import SetPin from "../pin/pin";
+import { useSession } from "next-auth/react";
 
 export default function Quicktransfer() {
   // take transfer values()acctnumber and amount
@@ -21,6 +22,12 @@ export default function Quicktransfer() {
   const [balance, setBalance] = useState('')
   const [pin, setPin] = useState('')
   const [showPin, setShowPin] = useState('')
+  const [transferAmount,setTransferAmount]=useState('')
+  const [transferPin,setTransferPin]=useState('')
+  // session email
+
+  const {data}=useSession()
+  const email=data?.user?.email
   console.log(acctNumber)
   const submitHandler = async (e) => {
     setLoader(true)
@@ -41,7 +48,8 @@ export default function Quicktransfer() {
           setName(res.data.fullname)
           setBalance(res.data.balance)
           setPin(res.data.transferPin)
-          if (res.data.transferPin !==1111) {
+          // if the user have already changed default pin, he should proceed
+          if (res.data.transferPin !== 1111) {
             setShowPin(true)
           }
           setLoader(false)
@@ -63,6 +71,23 @@ export default function Quicktransfer() {
       }
 
     }
+  }
+
+  const transferHandler=async (e)=>{
+    // to prevent default form refresh
+    e.preventDefault()
+    if(!transferAmount && !transferPin){
+    return  setErr("Transfer pin and amount should be provided")
+    }
+    try {
+      // make a request to getTransfer
+      const res= await axios.post('/api/transfer',{email,acctNumber,transferAmount,transferPin})
+      console.log(res)
+      
+    } catch (error) {
+      console.error("error is -  " +  error)
+    }
+
   }
 
   console.log("this is pin " + pin, typeof (pin))
@@ -117,18 +142,34 @@ export default function Quicktransfer() {
 
                   {!name ? (<button type="submit">check</button>) : ""}
                 </div>
+                <form action="">
+
                 {name && (
                   <>
                     <div >
                       <label htmlFor="">Amount</label>
-                      <input type="text" name="amount" id="" placeholder="$1000" />
+                      <input type="text" id="" placeholder="$1000" onChange={(e)=>{setAmount(e.target.transferAmount)}}/>
                     </div>
+                </>
+                    )}
+                    
+                   {showPin && (
+                    <>
+                    
+                     <div >
+                        <label htmlFor="">Pin</label>
+                        <input type="text" name="amount" id="" placeholder="Enter pin" onChange={(e)=>setTransferPin(e.target.value)} />
+                      </div>
                     <button type="submit" style={{ backgroundColor: balance <= 0 ? 'gray' : "rgb(6, 177, 230);" }} disabled={balance <= 0 ? true : false} >{balance <= 0 ? 'disabled' : "transfer"}</button>
+                    </>
+                    )}
+                    
+                    </form>
 
-                  </>
+                  
 
 
-                )}
+              
               </div>
             </form>
             <div className={styles.graph}>
@@ -139,17 +180,10 @@ export default function Quicktransfer() {
       </div>
       {pin == 1111 && (<SetPin />) || ""}
 
-      {showPin && (<div className='container'>
-        <h2>Input pin to proceed </h2>
-        <form action="">
-          <input type="password" />
-          <button type="submit">send</button>
 
-        </form>
-      </div>
-      )}
 
-      
+
     </>
-  
-)}
+
+  )
+}

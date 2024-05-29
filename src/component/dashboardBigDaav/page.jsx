@@ -136,7 +136,12 @@ const Dashboard = (props) => {
                                                                               {eye ?
 
                                                                                     <span className={styles.f2money}><PiDotsThreeOutlineBold /><PiDotsThreeOutlineBold /></span> :
-                                                                                    <span className={styles.f2money}><span className={styles.dollar}></span>{`$${props.balance}`}</span>
+                                                                                    <span className={styles.f2money}><span className={styles.dollar}></span>{`$${ new Intl.NumberFormat("en-US",{
+                                                                                          minimumFractionDigits:2,
+                                                                                         maximumFractionDigits:2,
+                                                                                          
+                                                      
+                                                                                      }).format(props.balance)}`}</span>
 
                                                                               }
                                                                         </div>

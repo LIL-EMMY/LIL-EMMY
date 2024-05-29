@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const transferSchema=new mongoose.Schema({
     sender:{
-        type:Number
+        type:String
     },
     amount:{
         type:Number
@@ -13,7 +13,7 @@ const transferSchema=new mongoose.Schema({
     // true = in(money received) false= out(money sent )
     mode:{
         type:Boolean
-    }
+    },
    
 },{timestamps:true})
 
